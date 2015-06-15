@@ -18,7 +18,7 @@
         %td= gangster.name
         %td= gangster.nickname
         %td= gangster.badness
-        %td= gangster.organisation.name
+        %td= gangster.organisation.name unless gangster.organisation.nil?
         %td= gangster.job.name unless gangster.job.nil?
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_gangster_path(gangster), :class => 'btn btn-default btn-xs'
