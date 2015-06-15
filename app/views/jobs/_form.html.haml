@@ -1,0 +1,9 @@
+= simple_form_for @job, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :name
+  = error_span(@job[:name])
+  = f.input :score
+  = error_span(@job[:score])
+  = f.input :setupcost
+  = error_span(@job[:setupcost])
+  = f.button :submit, :class => 'btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), jobs_path, :class => 'btn btn-default'

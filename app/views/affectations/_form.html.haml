@@ -1,0 +1,9 @@
+= simple_form_for @affectation, :html => { :class => 'form-horizontal' } do |f|
+  = f.association :gangster
+  = error_span(@affectation[:gangster_id])
+  = f.input :job_id, collection: @jobs
+  = error_span(@affectation[:job_id])
+  = f.input :salary
+  = error_span(@affectation[:salary])
+  = f.button :submit, :class => 'btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), affectations_path, :class => 'btn btn-default'

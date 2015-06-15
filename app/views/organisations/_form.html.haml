@@ -1,0 +1,9 @@
+= simple_form_for @organisation, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :name
+  = error_span(@organisation[:name])
+  = f.input :description
+  = error_span(@organisation[:description])
+  = f.input :theboss, collection: @gangsters
+  = error_span(@organisation[:theboss])
+  = f.button :submit, :class => 'btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), organisations_path, :class => 'btn btn-default'

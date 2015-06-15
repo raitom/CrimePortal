@@ -1,0 +1,11 @@
+= simple_form_for @gangster, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :name
+  = error_span(@gangster[:name])
+  = f.input :nickname
+  = error_span(@gangster[:nickname])
+  = f.input :badness
+  = error_span(@gangster[:badness])
+  = f.association :organisation
+  = error_span(@gangster[:organisation_id])
+  = f.button :submit, :class => 'btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), gangsters_path, :class => 'btn btn-default'

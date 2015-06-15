@@ -1,0 +1,23 @@
+- model_class = Organisation
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:name)
+      %th= model_class.human_attribute_name(:description)
+      %th= model_class.human_attribute_name(:theboss)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @organisations.each do |organisation|
+      %tr
+        %td= link_to organisation.id, organisation_path(organisation)
+        %td= organisation.name
+        %td= organisation.description
+        %td= organisation.theboss
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_organisation_path(organisation), :class => 'btn btn-default btn-xs'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), organisation_path(organisation), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
+
+= link_to t('.new', :default => t("helpers.links.new")), new_organisation_path, :class => 'btn btn-primary'

@@ -1,0 +1,24 @@
+# == Schema Information
+#
+# Table name: jobs
+#
+#  id             :INTEGER          not null, primary key
+#  name           :varchar
+#  score          :integer
+#  setupcost      :float
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  affectation_id :integer
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  score: 1
+  setupcost: 1.5
+
+two:
+  name: MyString
+  score: 1
+  setupcost: 1.5
