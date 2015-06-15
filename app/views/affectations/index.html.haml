@@ -13,8 +13,8 @@
     - @affectations.each do |affectation|
       %tr
         %td= link_to affectation.id, affectation_path(affectation)
-        %td= affectation.gangster_id
-        %td= affectation.job_id
+        %td= affectation.gangster.name unless affectation.gangster.nil?
+        %td= affectation.job.name unless affectation.job.nil?
         %td= affectation.salary
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_affectation_path(affectation), :class => 'btn btn-default btn-xs'

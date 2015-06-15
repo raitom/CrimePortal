@@ -13,4 +13,6 @@
 
 class Job < ActiveRecord::Base
   belongs_to :affectation
+
+  validates_presence_of :name, :score, :setupcost
 end

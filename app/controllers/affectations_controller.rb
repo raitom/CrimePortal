@@ -30,6 +30,10 @@ class AffectationsController < ApplicationController
 
     respond_to do |format|
       if @affectation.save
+
+        job = Job.find(@affectation.job_id)
+        job.update(affectation_id: @affectation.id)
+
         format.html { redirect_to @affectation, notice: 'Affectation was successfully created.' }
         format.json { render :show, status: :created, location: @affectation }
       else
@@ -44,6 +48,10 @@ class AffectationsController < ApplicationController
   def update
     respond_to do |format|
       if @affectation.update(affectation_params)
+
+        job = Job.find(@affectation.job_id)
+        job.update(affectation_id: @affectation.id)
+
         format.html { redirect_to @affectation, notice: 'Affectation was successfully updated.' }
         format.json { render :show, status: :ok, location: @affectation }
       else

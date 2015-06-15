@@ -15,4 +15,6 @@ class Gangster < ActiveRecord::Base
   belongs_to :organisation
   has_one :affectation
   has_one :job, through: :affectation
+
+  validates_presence_of :name, :nickname, :badness
 end

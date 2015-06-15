@@ -12,4 +12,6 @@
 
 class Organisation < ActiveRecord::Base
   has_many :gangsters
+  
+  validates_presence_of :name, :description
 end

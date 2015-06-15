@@ -7,7 +7,7 @@
       %th= model_class.human_attribute_name(:id)
       %th= model_class.human_attribute_name(:name)
       %th= model_class.human_attribute_name(:score)
-      %th= model_class.human_attribute_name(:setupcost)
+      %th Setup Cost
       %th=t '.actions', :default => t("helpers.actions")
   %tbody
     - @jobs.each do |job|
